@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './pages/home/home/home.component';
-import { LibraryComponent } from './pages/library/library/library.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LibraryComponent } from './pages/library/library.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -15,7 +16,8 @@ import { LibraryComponent } from './pages/library/library/library.component';
     LibraryComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ]
 })
 export class MainModule { }
