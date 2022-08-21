@@ -10,6 +10,10 @@ import { LibraryComponent } from './pages/library/library/library.component';
     HomeComponent,
     LibraryComponent
   ],
+  exports: [
+    HomeComponent, 
+    LibraryComponent
+  ],
   imports: [
     CommonModule
   ]
