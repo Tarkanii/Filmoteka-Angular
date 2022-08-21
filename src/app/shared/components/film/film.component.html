@@ -1,0 +1,6 @@
+<img [src]="posterPath" alt="poster" class="film_poster"> 
+<p class="film_title">{{ title }}</p>
+<p class="film_genres">{{ genreIds | getGenres: mediaType }}
+  <span class="film_date">{{ releaseDate | date: 'YYYY'}}</span>  
+</p>
+<p class="film_vote" *ngIf="true">{{ averageVote }}</p>

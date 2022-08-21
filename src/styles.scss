@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+ :root {
+
+  --font-family: 'Roboto', sans-serif;
+  --accent-color: #FF6B08;
+  --regular-color: #000000;
+
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 12px;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 320px;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    width: 657px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 920px;
+  }
+}

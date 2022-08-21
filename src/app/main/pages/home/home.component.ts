@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject, takeUntil } from 'rxjs';
+import { pipe, Subject, takeUntil } from 'rxjs';
 import { ServerResponse } from 'src/app/shared/interfaces/films';
 import { FilmsService } from 'src/app/shared/services/films.service';
 
@@ -11,6 +11,7 @@ import { FilmsService } from 'src/app/shared/services/films.service';
 export class HomeComponent implements OnInit {
   
   public films: any[] = [];
+  public isFilmsLoaded: boolean = false;
   private unsubscribe: Subject<void> = new Subject();
 
   constructor(
@@ -18,12 +19,21 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.filmsService.getFilms()
+    this.filmsService.genresSetted
     .pipe(takeUntil(this.unsubscribe))
-    .subscribe((response: ServerResponse) => {
-      this.films = response.results;
-    },  
-    (err) => console.log(err))
+    .subscribe((value: boolean) => {
+      if (value) {
+        this.filmsService.getFilms()
+        .pipe(takeUntil(this.unsubscribe))
+        .subscribe((response: ServerResponse) => {
+          this.films = response.results;
+          this.isFilmsLoaded = true;
+          console.log(this.films);
+        },  
+        (err) => console.log(err))
+      }
+    })
+   
   }
 
   ngOnDestroy(): void {

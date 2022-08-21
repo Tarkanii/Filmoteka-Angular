@@ -1,0 +1,34 @@
+.film {
+
+  &_poster {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    max-width: 100%;
+  }
+
+  &_title  {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  &_genres  {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-top: 5px;
+  }
+
+  &_date {
+    border-left: 1.5px solid var(--accent-color);
+    padding-left: 5px;
+    margin-left: 5px;
+  }
+
+  &_vote {
+    margin-top: 5px;
+    display: inline-block;
+    padding: 0 10px;
+    color: #ffffff;
+    background-color: var(--accent-color);
+    border-radius: 5px;
+  }
+}

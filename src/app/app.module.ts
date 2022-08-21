@@ -18,7 +18,6 @@ import { MainModule } from './main/main.module';
     MainModule,
     HttpClientModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

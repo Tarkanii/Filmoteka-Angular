@@ -1,0 +1,6 @@
+<div class="container">
+  <div class="films" *ngIf="isFilmsLoaded">  
+    <app-film class="film" [film]="film" *ngFor="let film of films">
+    </app-film>
+  </div>
+</div>
